@@ -11,7 +11,7 @@ ARG INSTALL_ZSH="true"
 ARG COMMON_SCRIPT_SOURCE="https://raw.githubusercontent.com/microsoft/vscode-dev-containers/master/script-library/common-debian.sh"
 ARG COMMON_SCRIPT_SHA="dev-mode"
 
-ARG SYMFONY_CLI="4.14.1"
+ARG SYMFONY_CLI="v4.14.3"
 
 # Install composer from official image
 COPY --from=composer:1.9.3 /usr/bin/composer /usr/bin/composer
@@ -31,7 +31,7 @@ RUN apt-get update \
   && rm /tmp/common-setup.sh \
   #
   #
-  && curl -fssL "https://github.com/symfony/cli/releases/download/$SYMFONY_CLI/symfony_linux_amd64" -o /usr/bin/symfony \
+  && curl -fssL https://github.com/symfony/cli/releases/download/$SYMFONY_CLI/symfony_linux_amd64 -o /usr/bin/symfony \
   && chmod +x /usr/bin/symfony \
   #
   # Install php extensions
