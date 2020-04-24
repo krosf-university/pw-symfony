@@ -6,6 +6,8 @@ services:
     volumes:
       - ..:/workspace
     command: apache2-foreground
+    environment:
+      - DATABASE_URL=mysql://root:x5vrvVQ7SP78XyvkSRJumJINLTLqQIW9@db:3306/symfony?serverVersion=8
     ports:
       - 8888:80
   db:

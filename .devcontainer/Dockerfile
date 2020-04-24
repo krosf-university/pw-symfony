@@ -35,7 +35,7 @@ RUN apt-get update \
   && chmod +x /usr/bin/symfony \
   #
   # Install php extensions
-  && install-php-extensions xdebug intl mysqli \
+  && install-php-extensions xdebug intl pdo_mysql \
   && echo "xdebug.remote_enable=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
   && echo "xdebug.remote_autostart=on" >> /usr/local/etc/php/conf.d/xdebug.ini \
   #
