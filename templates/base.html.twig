@@ -1,12 +1,23 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		{% block stylesheets %}{% endblock %}
+	</head>
+	<body style="justify-content:center;align-items:center;display:flex;flex-direction:column;min-height:100vh;">
+		{% set route_name = app.request.attributes.get('_route') %}
+		{% if route_name not in ['app_logout','app_login','lucky']%}
+			<nav>
+				<h2>
+					<a href="/logout">Cerrar Session</a>
+				</h2>
+			</nav>
+		{% endif %}
+		{% block body %}{% endblock %}
+		{% block javascripts %}{% endblock %}
+	</body>
 </html>

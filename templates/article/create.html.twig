@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+{% block title %}Crear Artículo
+{% endblock %}
+{% block body %}
+	<a href="{{path('articles')}}">Volver a la pantalla principal</a>
+	{{form_start(form)}}
+	{{form_widget(form)}}
+	{{form_end(form)}}
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Artículos
+{% endblock %}
+
+{% block body %}
+	<h2>Bienvenido a la web sobre artículos</h2>
+	<a href="{{path('add_article')}}">Añadir un artículo</a>
+	<p>Eston son los artículos publicados</p>
+	{% for article in articles %}
+		<a href="{{path('show_article', { 'id': article.id })}}">
+			<h3>{{article.title}}</h3>
+		</a>
+		<p>{{article.description}}</p>
+	{% endfor %}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block title %}Artículo
+	{{article.id}}
+{% endblock %}
+{% block body %}
+	<a href="{{path('articles')}}">Ver todos los artículos</a>
+	<h2>{{article.title}}</h2>
+	<h3>{{article.description}}</h3>
+	<p>{{article.body}}</p>
+{% endblock %}
